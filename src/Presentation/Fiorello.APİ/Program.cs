@@ -1,5 +1,6 @@
 using Fiorello.Application.Validators.CategoryValidators;
 using Fiorello.Persistence.Contexts;
+using Fiorello.Persistence.Mappers;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddValidatorsFromAssemblyContaining<CategoryCreateDtoValidator>();
+builder.Services.AddAutoMapper(typeof(CategoryProfile).Assembly);
 
 var app = builder.Build();
 
